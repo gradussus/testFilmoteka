@@ -3,7 +3,7 @@ import TrendingMovies from './MykolaPom';
 import renderFilmsMarkup from './voprim';
 import { refs } from './refs';
 
-const trendingMovies = new TrendingMovies();
+const trendingMovies = new TrendingMovies(container, options);
 
 function clearFunc() {
   pagination.reset();
@@ -36,7 +36,7 @@ createStartList();
 
 function createPagination() {
   if (refs.gallery.childElementCount > 10) {
-    const pagination = new Pagination(refs.container, options);
+    const pagination = new Pagination(container, options);
 
     pagination.on('beforeMove', function (eventData) {
       refs.gallery.innerHTML = '';
