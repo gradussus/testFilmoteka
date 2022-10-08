@@ -3,11 +3,11 @@ import TrendingMovies from './MykolaPom';
 import renderFilmsMarkup from './voprim';
 import { refs } from './refs';
 
-const trendingMovies = new TrendingMovies(container, options);
+const trendingMovies = new TrendingMovies();
 
-// function clearFunc() {
-//   pagination.reset();
-// }
+function clearFunc() {
+  pagination.reset();
+}
 
 let options = {
   totalItems: 100,
@@ -20,7 +20,7 @@ let options = {
 };
 
 function createStartList() {
-  trendingMovies()
+  trendingMovies
     .fetchTrendingMovies()
     .then(data => {
       renderFilmsMarkup(data);
@@ -36,7 +36,7 @@ createStartList();
 
 function createPagination() {
   if (refs.gallery.childElementCount > 10) {
-    const pagination = new Pagination(container, options);
+    const pagination = new Pagination(refs.container, options);
 
     pagination.on('beforeMove', function (eventData) {
       refs.gallery.innerHTML = '';
