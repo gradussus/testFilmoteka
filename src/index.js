@@ -10,4 +10,3 @@ import './js/NataliaDavydenko';
 import './js/voprim';
 import './js/spiner';
 import './js/scrollBtn';
-// Ідея лайно, але для початку згодиться, я думаю=)
