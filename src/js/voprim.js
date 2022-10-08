@@ -24,20 +24,20 @@ export default function renderFilmsMarkup(films) {
 //   refs.filmsListRef.innerHTML = makeFilmsMarkup(films);
 // }
 
-function renderFilmsMarkup(films) {
-  films
-    .map(({ poster_path, title, id }) => {
-      // let filmGenres = genres.map(({ name }) => name).join(', ');
+// function renderFilmsMarkup(films) {
+//   films
+//     .map(({ poster_path, title, id }) => {
+//       // let filmGenres = genres.map(({ name }) => name).join(', ');
 
-      return `<li class="films__item" data-id=${id}>
-                <div class="films__img">
-                    <img src=https://image.tmdb.org/t/p/original${poster_path} alt="${title}" loading="lazy">
-                </div>
-                
-            </li>`;
-    })
-    .forEach(c => refs.gallery.insertAdjacentHTML('beforeend', c));
-}
+//       return `<li class="films__item" data-id=${id}>
+//                 <div class="films__img">
+//                     <img src=https://image.tmdb.org/t/p/original${poster_path} alt="${title}" loading="lazy">
+//                 </div>
+
+//             </li>`;
+//     })
+//     .forEach(c => refs.gallery.insertAdjacentHTML('beforeend', c));
+// }
 
 // function renderFilmsMarkup(films) {
 //   films
