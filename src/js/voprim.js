@@ -5,13 +5,9 @@
 import { refs } from './refs';
 // import TrendingMovies from './MykolaPom';
 
-export default function renderFilmsMarkup(films) {
-  refs.filmsListRef.innerHTML = makeFilmsMarkup(films);
-}
-
 function renderFilmsMarkup(films) {
   films
-    .map(({ poster_path, title, release_date, genres, id }) => {
+    .map(({ poster_path, title, id }) => {
       // let filmGenres = genres.map(({ name }) => name).join(', ');
 
       return `<li class="films__item" data-id=${id}>
@@ -21,15 +17,22 @@ function renderFilmsMarkup(films) {
                 <div class="films__description">
                   <p class="films__title">${title}</p>
                   <div class="films__meta">
-                    <span class="films__genres">${genres || 'Action'}</span>
-                    <span class="films__sep">|</span>
-                    <span class="films__data">${(release_date || '2022').slice(
-                      0,
-                      4
-                    )}</span>
+                    
                   </div>
                 </div>
             </li>`;
     })
     .forEach(c => refs.gallery.insertAdjacentHTML('beforeend', c));
+}
+{
+  /* <span class="films__genres">${genres || 'Action'}</span>
+                    <span class="films__sep">|</span>
+                    <span class="films__data">${(release_date || '2022').slice(
+                      0,
+                      4
+                    )}</span> */
+}
+//  release_date, genres,
+export default function renderFilmsMarkup(films) {
+  refs.filmsListRef.innerHTML = makeFilmsMarkup(films);
 }

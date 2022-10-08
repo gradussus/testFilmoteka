@@ -5,9 +5,9 @@ import { refs } from './refs';
 
 const trendingMovies = new TrendingMovies(container, options);
 
-function clearFunc() {
-  pagination.reset();
-}
+// function clearFunc() {
+//   pagination.reset();
+// }
 
 let options = {
   totalItems: 100,
@@ -20,7 +20,7 @@ let options = {
 };
 
 function createStartList() {
-  trendingMovies
+  trendingMovies()
     .fetchTrendingMovies()
     .then(data => {
       renderFilmsMarkup(data);
