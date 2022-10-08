@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import TrendingMovies from './MykolaPom';
-import renderFilmsMarkup from './voprim';
+// import renderFilmsMarkup from './voprim';
 
 const trendingMovies = new TrendingMovies();
 
