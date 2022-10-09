@@ -42,12 +42,11 @@ function createStartList() {
     .fetchTrendingMovies()
     .then(data => {
       renderFilmsMarkup(data);
+      options.totalItems = trendingMovies.getResults();
+      createPagination();
 
       // renderGenres(data);
-      trendingMovies.fetchTotalResults().then(data => {
-        options.totalItems = trendingMovies.getResults();
-        createPagination();
-      });
+      // trendingMovies.fetchTotalResults().then(data => {
     })
     .catch(error => console.log(error));
 }
