@@ -1,32 +1,32 @@
-.header{
+.header {
   background-image: url('../images/abstract-background-with-red-lines\ 1.jpg');
   background-color: rgb(0, 0, 0, 0.5);
   background-repeat: no-repeat;
-  background-size:cover;
-  
+  background-size: cover;
+
   max-width: 1600px;
   height: 215px;
 }
-.header-film__container{ 
+.header-film__container {
   flex-wrap: nowrap;
   justify-content: center;
   margin-right: 32px;
   margin-left: 32px;
 }
 
-.header-film__main-wraper{
+.header-film__main-wraper {
   padding-top: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.header-film__logo-link{
+.header-film__logo-link {
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row-reverse;
 }
-.header-film__logo-name{
+.header-film__logo-name {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -35,77 +35,73 @@
   display: flex;
   align-items: center;
   text-align: center;
-  
-  color: #FFFFFF;
+
+  color: #ffffff;
 }
 
-/////heder logo 
-.header-film__logo-icon{
-    fill: #FFFFFF;
-    padding-right:8px;
-    cursor: pointer;
-  }
+/////heder logo
+.header-film__logo-icon {
+  fill: #ffffff;
+  padding-right: 8px;
+  cursor: pointer;
+}
 
- 
 //////////
-  // navigation
-.header__navigation{
-  
-display: flex;
-align-items: center;
+// navigation
+.header__navigation {
+  display: flex;
+  align-items: center;
 }
 
-.header__navigation-button{
-    display: flex;
-    justify-content: space-between;
-    
-  }
-  .header__navigation-item{
-      margin-right: 40px;
-    }
-    .header__navigation-item:nth-child(2){
-      margin-right: 0;
-    }
- .header__navigation-link{
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
+.header__navigation-button {
+  display: flex;
+  justify-content: space-between;
+}
+.header__navigation-item {
+  margin-right: 40px;
+}
+.header__navigation-item:nth-child(2) {
+  margin-right: 0;
+}
+.header__navigation-link {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
 
-display: flex;
-text-transform: uppercase;
-color: #FFFFFF;
+  display: flex;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 /// search div
-.header-film__search-wraper{
+.header-film__search-wraper {
   margin: auto;
   margin-top: 40px;
   position: relative;
-  width: 380px
+  width: 380px;
 }
-.header__form{
-   display: flex;
-   position: relative;
-   margin: auto;
-  }
+.header__form {
+  display: flex;
+  position: relative;
+  margin: auto;
+}
 
+.header-film__warning-msg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 45px;
 
-.header-film__warning-msg{
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   align-items: center;
-   margin-top: 16px;
-   margin-bottom: 45px;
-   
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
-  color: #FF001B;
+  color: #ff001b;
 }
 
 ////////input form
@@ -116,7 +112,7 @@ color: #FFFFFF;
   padding: 3px 16px 3px 1px;
   outline: none;
   background-color: transparent;
-  color: inherit;
+  color: #fff;
 }
 .header-film__input::-moz-placeholder {
   color: #fff;
@@ -127,17 +123,11 @@ color: #FFFFFF;
 .header-film__input::placeholder {
   color: #fff;
 }
-.header-film__logo-search{
+.header-film__logo-search {
   position: absolute;
   top: 5px;
   right: 0;
   background-color: transparent;
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 // //////
-
-
-
-
-
-
