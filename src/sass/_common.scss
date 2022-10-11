@@ -6,12 +6,14 @@
   --secondary-text-color: #ffffff;
   --main-background-color: #ffffff;
   --third-text-color: #ff6b01;
+  --accent-color-bright:#FF001B;
   --light-linear-gradient: linear-gradient(rgba(0, 0, 0, 0.56),
         rgba(0, 0, 0, 0.56));
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 img {
   display: block;
@@ -37,6 +39,15 @@ ol {
 body {
   margin-right: auto;
   margin-left: auto;
+  height: 100%;
+}
+.wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1 1 auto;
 }
 a {
   text-decoration: none;

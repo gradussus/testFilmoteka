@@ -7,18 +7,26 @@ const trendingMovies = new TrendingMovies();
 
 // Жанри (початок)
 
-async function fetchGenres() {
-  let response = await fetch(
-    `https://api.themoviedb.org/3/genre/movie/list?api_key=0888b454b4f7be0ebcd69ceb372ced29&language=en-US`
-  );
-  return response.json();
-}
+// переніс у файл де робляться фетчі з АПІ
+// async function fetchGenres() {
+//   let response = await fetch(
+//     `https://api.themoviedb.org/3/genre/movie/list?api_key=0888b454b4f7be0ebcd69ceb372ced29&language=en-US`
+//   );
+//   return response.json();
+// }
 
 // Жанри(кінець);
 
-// function clearFunc() {
-//   pagination.reset();
-// }
+// setToLS_answer
+
+function setToLocacStorageAnswer(answer) {
+  localStorage.setItem('currentFilms', JSON.stringify(answer));
+}
+function removeInLocalStorageCurrentFilms() {
+  localStorage.removeItem('currentFilms');
+}
+
+// pag options
 
 let options = {
   totalItems: 100,
@@ -30,23 +38,25 @@ let options = {
   lastItemClassName: 'tui-last-child',
 };
 
+// startList
+
 function createStartList() {
-  fetchGenres().then(({ genres }) => {
-    // console.log(genres);
+  trendingMovies
+    .fetchGenres()
+    .then(({ genres }) => {
     const arr = [...genres];
     localStorage.setItem('genres', JSON.stringify(arr));
-    console.log(JSON.stringify(arr));
   });
 
   trendingMovies
     .fetchTrendingMovies()
     .then(data => {
       renderFilmsMarkup(data);
+      // create pag
       options.totalItems = trendingMovies.getResults();
       createPagination();
-
-      // renderGenres(data);
-      // trendingMovies.fetchTotalResults().then(data => {
+      //localStor
+      setToLocacStorageAnswer(data);
     })
     .catch(error => console.log(error));
 }
@@ -63,15 +73,18 @@ function createPagination() {
       trendingMovies
         .fetchTrendingMovies()
         .then(data => {
-          onClickPagEvent(data);
+          onClickPageEvent(data);
         })
         .catch(error => console.log(error));
     });
   }
 }
 
-function onClickPagEvent(data) {
+function onClickPageEvent(data) {
   renderFilmsMarkup(data);
+
+  removeInLocalStorageCurrentFilms();
+  setToLocacStorageAnswer(data);
 
   window.scrollTo({
     top: 0,
@@ -82,7 +95,6 @@ function onClickPagEvent(data) {
 refs.form.addEventListener('submit', onSubmitEvent);
 
 function onSubmitEvent(e) {
-  // pagination.reset();
   e.preventDefault();
   let inputValue = refs.form.firstElementChild.value;
   if (!inputValue.trim()) {
@@ -95,8 +107,13 @@ function onSubmitEvent(e) {
   trendingMovies
     .fetchMovie()
     .then(data => {
+      removeInLocalStorageCurrentFilms();
+      setToLocacStorageAnswer(data);
+
       renderFilmsMarkup(data);
+
       options.totalItems = trendingMovies.getResults();
+
       createPaginationOnRequest();
     })
     .catch(error => console.log(error));
@@ -116,6 +133,9 @@ function createPaginationOnRequest() {
     trendingMovies
       .fetchMovie()
       .then(data => {
+        removeInLocalStorageCurrentFilms();
+        setToLocacStorageAnswer(data);
+
         renderFilmsMarkup(data);
       })
       .catch(error => console.log(error));
